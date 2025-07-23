@@ -1,9 +1,16 @@
 # query-builder
 react-awesome-query-builder + jsonLogic
 
+- [Setup](#setup)
 - 🗂️ [Estrutura de pastas e arquivos do projeto](#️-estrutura-de-pastas-e-arquivos-do-projeto)
 - ⚠️ [Diretrizes para desenvolvimento - Workflow de trabalho](#️-diretrizes-para-desenvolvimento---workflow-de-trabalho)
 - Notas
+
+# Setup
+
+```sh
+pnpm add @react-awesome-query-builder/ui @react-awesome-query-builder/antd json-logic-js
+```
 
 # 🗂️ Estrutura de pastas e arquivos do projeto
 
