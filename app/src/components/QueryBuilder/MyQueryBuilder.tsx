@@ -2,7 +2,7 @@
 
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Query, Builder, Utils as QbUtils } from '@react-awesome-query-builder/ui'
 import '@react-awesome-query-builder/ui/css/styles.css'
 import type { Config, ImmutableTree, WidgetProps } from '@react-awesome-query-builder/ui'
@@ -121,17 +121,26 @@ const config: Config = {
   },
 }
 
-const initialTree: ImmutableTree = QbUtils.checkTree(
-  QbUtils.loadTree({ id: QbUtils.uuid(), type: 'group' }),
-  config,
-)
-
 export default function MyQueryBuilder() {
-  const [tree, setTree] = useState<ImmutableTree>(initialTree)
+  const [tree, setTree] = useState<ImmutableTree | null>(null)
+  const [isClient, setIsClient] = useState(false)
+
+  useEffect(() => {
+    setIsClient(true)
+    const initialTree = QbUtils.checkTree(
+      QbUtils.loadTree({ id: QbUtils.uuid(), type: 'group' }),
+      config
+    )
+    setTree(initialTree)
+  }, [])
 
   const onChange = (immutableTree: ImmutableTree, config: Config) => {
     setTree(immutableTree)
     console.log(QbUtils.queryString(immutableTree, config))
+  }
+
+  if (!isClient || !tree) {
+    return <div>Loading Query Builder...</div>
   }
 
   return (
