@@ -1,9 +1,8 @@
 // app/src/components/QueryBuilder/MyQueryBuilder.tsx
-
 'use client'
-
 import React, { useState, useEffect } from 'react'
-import { Query, Builder, Utils as QbUtils, BasicConfig } from '@react-awesome-query-builder/ui'
+import { /*Query,*/ Builder, Utils as QbUtils, /*BasicConfig*/ } from '@react-awesome-query-builder/ui'
+import { Query, BasicConfig } from '@react-awesome-query-builder/antd'
 import '@react-awesome-query-builder/ui/css/styles.css'
 import type { Config, ImmutableTree } from '@react-awesome-query-builder/ui'
 
