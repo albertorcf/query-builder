@@ -1,0 +1,109 @@
+// app/src/components/QueryBuilder/MyQueryBuilder.tsx
+
+'use client'
+
+import React, { useState } from 'react'
+import { Query, Builder, Utils as QbUtils } from '@react-awesome-query-builder/ui'
+import '@react-awesome-query-builder/ui/css/styles.css'
+import type { Config, ImmutableTree, WidgetProps } from '@react-awesome-query-builder/ui'
+
+// ✅ Config completo e ajustado para RAQB v6.6.15
+const config: Config = {
+  conjunctions: {
+    AND: {
+      label: 'And',
+      formatConj: (children) => `(${children.join(' AND ')})`,
+      sqlFormatConj: (children) => `(${children.join(' AND ')})`,
+      mongoConj: '$and',
+      spelFormatConj: (children) => `(${children.join(' and ')})`,
+    },
+    OR: {
+      label: 'Or',
+      formatConj: (children) => `(${children.join(' OR ')})`,
+      sqlFormatConj: (children) => `(${children.join(' OR ')})`,
+      mongoConj: '$or',
+      spelFormatConj: (children) => `(${children.join(' or ')})`,
+    },
+  },
+
+  operators: {
+    equal: { label: '=' },
+    not_equal: { label: '!=' },
+    greater: { label: '>' },
+    less: { label: '<' },
+  },
+
+  widgets: {
+    number: {
+      type: 'number',
+      valueSrc: 'value',
+      factory: (props: WidgetProps) => (
+        <input
+          type="number"
+          value={props.value ?? ''}
+          onChange={(e) => props.setValue(Number(e.target.value))}
+        />
+      ),
+    },
+    boolean: {
+      type: 'boolean',
+      valueSrc: 'value',
+      factory: (props: WidgetProps) => (
+        <input
+          type="checkbox"
+          checked={!!props.value}
+          onChange={(e) => props.setValue(e.target.checked)}
+        />
+      ),
+    },
+  },
+
+  settings: {
+    setOpOnChangeField: ['equal'], // ✅ propriedade obrigatória
+  },
+
+  fields: {
+    age: {
+      label: 'Age',
+      type: 'number',
+      fieldSettings: { min: 0 },
+      valueSources: ['value'],
+      preferWidgets: ['number'],
+    },
+    isActive: {
+      label: 'Is Active',
+      type: 'boolean',
+      valueSources: ['value'],
+      preferWidgets: ['boolean'],
+    },
+  },
+}
+
+const initialTree: ImmutableTree = QbUtils.checkTree(
+  QbUtils.loadTree({ id: QbUtils.uuid(), type: 'group' }),
+  config,
+)
+
+export default function MyQueryBuilder() {
+  const [tree, setTree] = useState<ImmutableTree>(initialTree)
+
+  const onChange = (immutableTree: ImmutableTree, config: Config) => {
+    setTree(immutableTree)
+    console.log(QbUtils.queryString(immutableTree, config))
+  }
+
+  return (
+    <div>
+      <Query
+        {...config}
+        value={tree}
+        onChange={onChange}
+        renderBuilder={(props) => (
+          <div className="query-builder">
+            <Builder {...props} />
+          </div>
+        )}
+      />
+    </div>
+  )
+}
