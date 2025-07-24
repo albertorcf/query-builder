@@ -59,7 +59,10 @@ const config: Config = {
   },
 
   settings: {
-    setOpOnChangeField: ['equal'], // ✅ propriedade obrigatória
+    // app/node_modules/.pnpm/@react-awesome-query-builder+core@6.6.15/node_modules/@react-awesome-query-builder/core/modules/index.d.ts
+    // setOpOnChangeField: Array<ChangeFieldStrategy>
+    // type ChangeFieldStrategy = "default" | "keep" | "first" | "none"
+    setOpOnChangeField: ['default'], // ✅ propriedade obrigatória
   },
 
   fields: {
@@ -77,6 +80,10 @@ const config: Config = {
       preferWidgets: ['boolean'],
     },
   },
+
+  // ✅ Adicionado para satisfazer a tipagem de Config
+  types: {},
+  ctxts: [],
 }
 
 const initialTree: ImmutableTree = QbUtils.checkTree(
