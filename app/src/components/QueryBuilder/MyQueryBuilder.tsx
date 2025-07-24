@@ -63,6 +63,28 @@ const config: Config = {
     // setOpOnChangeField: Array<ChangeFieldStrategy>
     // type ChangeFieldStrategy = "default" | "keep" | "first" | "none"
     setOpOnChangeField: ['default'], // ✅ propriedade obrigatória
+    // ✅ renderProvider é obrigatório para evitar erro de runtime
+    renderProvider: (props) => <>{props.children}</>,
+    renderButtonGroup: (props) => <>{props.children}</>,
+    renderButton: (props) => {
+      // Filtra props inválidas para <button>
+      const {
+        renderIcon,
+        readonly,
+        label,
+        ...rest
+      } = props;
+
+      return (
+        <button
+          {...rest}
+          type="button"
+          disabled={readonly}
+        >
+          {label}
+        </button>
+      );
+    },
   },
 
   fields: {
@@ -83,7 +105,11 @@ const config: Config = {
 
   // ✅ Adicionado para satisfazer a tipagem de Config
   types: {},
-  ctxts: [],
+  ctx: {
+    utils: {} as any,
+    W: {} as any,
+    O: {} as any,
+  },
 }
 
 const initialTree: ImmutableTree = QbUtils.checkTree(
