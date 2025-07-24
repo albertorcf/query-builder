@@ -15,7 +15,7 @@ const config: Config = {
       label: 'Age',
       type: 'number',
       fieldSettings: { min: 0 },
-      valueSources: ['value', 'field'],
+      valueSources: ['value', 'field', 'func'],
       preferWidgets: ['number'],
     },
     maxAge: {
@@ -32,6 +32,19 @@ const config: Config = {
       preferWidgets: ['boolean'],
     },
   },
+  funcs: {
+    soma: {
+      label: "Soma",
+      returnType: "number",
+      args: {
+        a: { type: "number", label: "A" },
+        b: { type: "number", label: "B" }
+      },
+      jsonLogic: (args: any) => ({
+        "soma": [args.a, args.b]
+      }),
+    },
+  }
 }
 
 type MyQueryBuilderProps = {
