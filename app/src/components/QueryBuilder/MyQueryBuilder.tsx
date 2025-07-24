@@ -61,6 +61,13 @@ export default function MyQueryBuilder() {
           </div>
         )}
       />
+      {/* Painel para mostrar a árvore interna */}
+      <div style={{ marginTop: 32, background: '#f7f7f7', borderRadius: 8, padding: 16, fontSize: 14, color: '#111' }}>
+        <strong style={{ color: '#000' }}>Árvore interna (JSON):</strong>
+        <pre style={{ whiteSpace: 'pre-wrap', wordBreak: 'break-all', background: '#fff', padding: 8, borderRadius: 4, border: '1px solid #eee', color: '#000' }}>
+          {JSON.stringify(tree, null, 2)}
+        </pre>
+      </div>
     </div>
   )
 }
