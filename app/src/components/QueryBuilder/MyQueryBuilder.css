@@ -1,6 +1,7 @@
 /* Customização do componente QueryBuilder (Ant Design) */
 .query-builder {
   color: #000 !important;
+  margin: 0;
 }
 
 .query-builder .group--actions button:not(:last-child),
