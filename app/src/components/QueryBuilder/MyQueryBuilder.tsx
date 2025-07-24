@@ -33,11 +33,11 @@ export default function MyQueryBuilder() {
 
   useEffect(() => {
     setIsClient(true)
-    const initialTree = QbUtils.Validation.sanitizeTree(
+    const initialTree = QbUtils.checkTree(
       QbUtils.loadTree({ id: QbUtils.uuid(), type: 'group' }),
       config
     )
-    console.log('sanitizeTree result:', initialTree)
+    setTree(initialTree)
   }, [])
 
   const onChange = (immutableTree: ImmutableTree, config: Config) => {
