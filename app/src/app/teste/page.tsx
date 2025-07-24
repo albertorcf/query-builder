@@ -1,7 +1,5 @@
 // app/src/app/teste/page.tsx
 'use client';
-
-import { Provider } from "react-redux";
 import QueryBuilder from "@/components/QueryBuilder/MyQueryBuilder";
 
 export default function TestePage() {
