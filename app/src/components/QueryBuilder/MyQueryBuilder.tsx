@@ -15,6 +15,13 @@ const config: Config = {
       label: 'Age',
       type: 'number',
       fieldSettings: { min: 0 },
+      valueSources: ['value', 'field'],
+      preferWidgets: ['number'],
+    },
+    maxAge: {
+      label: 'Max Age',
+      type: 'number',
+      fieldSettings: { min: 0 },
       valueSources: ['value'],
       preferWidgets: ['number'],
     },
