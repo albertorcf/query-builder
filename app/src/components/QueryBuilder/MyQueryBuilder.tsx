@@ -85,6 +85,15 @@ const config: Config = {
         </button>
       );
     },
+    renderField: (props) => (
+      <select {...props}>
+        {props.items?.map((item, index) => (
+          <option key={index} value={item.key}>
+            {item.label}
+          </option>
+        ))}
+      </select>
+    ),
   },
 
   fields: {
