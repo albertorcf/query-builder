@@ -1,5 +1,18 @@
 /* Customização do componente QueryBuilder (Ant Design) */
 .query-builder {
   color: #000 !important;
-  
+}
+
+.query-builder .group--actions button:not(:last-child),
+.query-builder .rule--actions button:not(:last-child) {
+  margin-right: 6px;
+}
+
+.query-builder .group--actions button,
+.query-builder .rule--actions button {
+/*.query-builder .rule--header button {*/
+  border: 1px solid #444 !important;
+  border-radius: 8px !important;
+  padding-left: 4px;
+  padding-right: 4px;
 }
