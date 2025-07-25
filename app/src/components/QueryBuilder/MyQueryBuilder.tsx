@@ -1,60 +1,28 @@
 // app/src/components/QueryBuilder/MyQueryBuilder.tsx
 'use client'
 import React, { useState, useEffect } from 'react'
-import { /*Query,*/ Builder, Utils as QbUtils, /*BasicConfig*/ } from '@react-awesome-query-builder/ui'
-import { Query, BasicConfig } from '@react-awesome-query-builder/antd'
+import { Builder, Utils as QbUtils } from '@react-awesome-query-builder/ui'
+import { Query } from '@react-awesome-query-builder/antd'
 import '@react-awesome-query-builder/ui/css/styles.css'
 import './MyQueryBuilder.css'
 import type { Config, ImmutableTree } from '@react-awesome-query-builder/ui'
 
-// ✅ Config baseado no BasicConfig do RAQB
-const config: Config = {
-  ...BasicConfig,
-  fields: {
-    age: {
-      label: 'Age',
-      type: 'number',
-      fieldSettings: { min: 0 },
-      valueSources: ['value', 'field', 'func'],
-      preferWidgets: ['number'],
-    },
-    maxAge: {
-      label: 'Max Age',
-      type: 'number',
-      fieldSettings: { min: 0 },
-      valueSources: ['value'],
-      preferWidgets: ['number'],
-    },
-    isActive: {
-      label: 'Is Active',
-      type: 'boolean',
-      valueSources: ['value'],
-      preferWidgets: ['boolean'],
-    },
-  },
-  funcs: {
-    soma: {
-      label: "Soma",
-      returnType: "number",
-      args: {
-        a: { type: "number", label: "A" },
-        b: { type: "number", label: "B" }
-      },
-      jsonLogic: (args: any) => ({
-        "soma": [args.a, args.b]
-      }),
-    },
-  }
-}
-
+// ⚛️ Tipagem das propriedades do componente
 type MyQueryBuilderProps = {
-  onTreeChange?: (tree: ImmutableTree, config: Config) => void;
+  config: Config;
+  onTreeChange: (tree: ImmutableTree) => void;
 };
 
+// ============================================================================
+// ✨ Componente MyQueryBuilder
+// ============================================================================
 export default function MyQueryBuilder(props: MyQueryBuilderProps) {
+  const { config, onTreeChange } = props;
   const [tree, setTree] = useState<ImmutableTree | null>(null);
   const [isClient, setIsClient] = useState(false);
 
+  // 🔄 Efeito para inicializar a árvore de consulta quando o componente é montado no cliente
+  // ou quando a configuração (config) é alterada.
   useEffect(() => {
     setIsClient(true);
     const initialTree = QbUtils.checkTree(
@@ -62,20 +30,22 @@ export default function MyQueryBuilder(props: MyQueryBuilderProps) {
       config
     );
     setTree(initialTree);
-  }, []);
+  }, [config]); // Depende da config para re-inicializar se ela mudar
 
+  // 🔄 Função de callback para quando a árvore de consulta é alterada
   const onChange = (immutableTree: ImmutableTree, config: Config) => {
     setTree(immutableTree);
-    if (props.onTreeChange) {
-      props.onTreeChange(immutableTree, config);
-    }
+    onTreeChange(immutableTree);
+    // Opcional: logar a string de consulta para depuração
     console.log(QbUtils.queryString(immutableTree, config));
   };
 
+  // ⏳ Exibe um loader enquanto o componente não está montado no cliente ou a árvore não foi inicializada
   if (!isClient || !tree) {
     return <div>Loading Query Builder...</div>;
   }
 
+  // 🎨 Renderização do construtor de consultas
   return (
     <div>
       <Query

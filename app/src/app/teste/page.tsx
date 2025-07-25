@@ -1,28 +1,83 @@
 // app/src/app/teste/page.tsx
 "use client";
 import React from "react";
-import QueryBuilder from "@/components/QueryBuilder/MyQueryBuilder";
+import MyQueryBuilder from "@/components/QueryBuilder/MyQueryBuilder";
+import type { Config, ImmutableTree } from '@react-awesome-query-builder/ui';
+import { BasicConfig } from '@react-awesome-query-builder/antd';
+import { Utils as QbUtils } from '@react-awesome-query-builder/ui';
 
+// ============================================================================
+// ⚙️ Configuração do Query Builder
+// ============================================================================
+// Esta configuração define os campos, operadores e funções disponíveis.
+// Ela foi movida do componente MyQueryBuilder para a página,
+// permitindo que MyQueryBuilder seja verdadeiramente reutilizável.
+const config: Config = {
+  ...BasicConfig,
+  fields: {
+    age: {
+      label: 'Idade',
+      type: 'number',
+      fieldSettings: { min: 0 },
+      valueSources: ['value', 'field', 'func'],
+      preferWidgets: ['number'],
+    },
+    maxAge: {
+      label: 'Idade Máxima',
+      type: 'number',
+      fieldSettings: { min: 0 },
+      valueSources: ['value'],
+      preferWidgets: ['number'],
+    },
+    isActive: {
+      label: 'Está Ativo',
+      type: 'boolean',
+      valueSources: ['value'],
+      preferWidgets: ['boolean'],
+    },
+  },
+  funcs: {
+    soma: {
+      label: "Soma",
+      returnType: "number",
+      args: {
+        a: { type: "number", label: "A" },
+        b: { type: "number", label: "B" }
+      },
+      jsonLogic: (args: any) => ({
+        "soma": [args.a, args.b]
+      }),
+    },
+  }
+};
+
+// ============================================================================
+// ✨ Página de Teste
+// ============================================================================
 export default function TestePage() {
-  const [tree, setTree] = React.useState<any>(null);
-  const [config, setConfig] = React.useState<any>(null);
-  const handleTreeChange = (t: any, c: any) => {
-    setTree(t);
-    setConfig(c);
+  // 🌳 Estado para armazenar a árvore de consulta (estrutura de dados imutável)
+  const [tree, setTree] = React.useState<ImmutableTree | null>(null);
+
+  // 🔄 Callback para atualizar o estado da árvore quando ela muda no componente filho
+  const handleTreeChange = (newTree: ImmutableTree) => {
+    setTree(newTree);
   };
+
+  // 🧠 Lógica para converter a árvore em formato JsonLogic
   let jsonLogic = null;
   try {
     if (tree && config) {
-      // eslint-disable-next-line @typescript-eslint/no-var-requires
-      const { Utils: QbUtils } = require("@react-awesome-query-builder/ui");
       jsonLogic = QbUtils.jsonLogicFormat(tree, config).logic;
     }
-  } catch (e) {}
+  } catch (e) {
+    console.error("Erro ao gerar JsonLogic:", e);
+  }
 
   return (
     <div>
       <h2>Teste do Query Builder</h2>
-      <QueryBuilder onTreeChange={handleTreeChange} />
+      {/* 🧩 Renderiza o componente QueryBuilder, passando a configuração e o callback */}
+      <MyQueryBuilder config={config} onTreeChange={handleTreeChange} />
 
       {/* Painéis lado a lado responsivos */}
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: 24, marginTop: 32 }}>
