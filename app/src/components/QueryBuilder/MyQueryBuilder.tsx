@@ -25,11 +25,13 @@ export default function MyQueryBuilder(props: MyQueryBuilderProps) {
   // ou quando a configuração (config) é alterada.
   useEffect(() => {
     setIsClient(true);
-    const initialTree = QbUtils.checkTree(
+    // `checkTree` está obsoleto. Usamos `sanitizeTree` que retorna um objeto
+    // com a árvore corrigida na propriedade `fixedTree`.
+    const { fixedTree } = QbUtils.Validation.sanitizeTree(
       QbUtils.loadTree({ id: QbUtils.uuid(), type: 'group' }),
       config
     );
-    setTree(initialTree);
+    setTree(fixedTree);
   }, [config]); // Depende da config para re-inicializar se ela mudar
 
   // 🔄 Função de callback para quando a árvore de consulta é alterada
