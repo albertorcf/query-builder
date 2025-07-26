@@ -2,6 +2,7 @@
 "use client";
 import React from "react";
 import MyQueryBuilder from "@/components/QueryBuilder/MyQueryBuilder";
+import inicialTree from "./inicialTree.json";
 import type { Config, ImmutableTree } from '@react-awesome-query-builder/ui';
 import { BasicConfig } from '@react-awesome-query-builder/antd';
 import { Utils as QbUtils } from '@react-awesome-query-builder/ui';
@@ -99,14 +100,15 @@ const jsonLogicObject = {
 // ============================================================================
 export default function TestePage() {
   // 🌳 Estado para armazenar a árvore de consulta (estrutura de dados imutável)
-  const [tree, setTree] = React.useState<ImmutableTree | null>(null);
-  //const [tree, setTree] = React.useState<ImmutableTree | null>(initialTree ?? null);
-
-  React.useEffect(() => {
-    // 🧠 Lógica para carregar a árvore inicial a partir do JsonLogic
-    const initialTree = QbUtils.loadFromJsonLogic(jsonLogicObject, config);
-    setTree(initialTree ?? null);
-  }, []);
+  // Inicializa a árvore diretamente via import do arquivo inicialTree.json
+  const [tree, setTree] = React.useState<ImmutableTree | null>(
+    QbUtils.loadTree(inicialTree as any)
+  );
+  // 🧠 (Comentado) Lógica para carregar a árvore inicial a partir do JsonLogic
+  // React.useEffect(() => {
+  //   const initialTree = QbUtils.loadFromJsonLogic(jsonLogicObject, config);
+  //   setTree(initialTree ?? null);
+  // }, []);
 
   // 🔄 Callback para atualizar o estado da árvore quando ela muda no componente filho
   const handleTreeChange = (newTree: ImmutableTree) => {
