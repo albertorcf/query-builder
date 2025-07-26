@@ -63,7 +63,7 @@ const config: Config = {
 };
 
 // ============================================================================
-// ✨ Converte jsonLogic to ImmutableTree
+// ✨ JsonLogic inicial
 // ============================================================================
 /*
 const jsonLogicObject = {
@@ -93,7 +93,6 @@ const jsonLogicObject = {
     ]
   }]
 };
-//const initialTree = QbUtils.loadFromJsonLogic(jsonLogicObject, config);
 
 // ============================================================================
 // ✨ Página de Teste
@@ -104,6 +103,7 @@ export default function TestePage() {
   //const [tree, setTree] = React.useState<ImmutableTree | null>(initialTree ?? null);
 
   React.useEffect(() => {
+    // 🧠 Lógica para carregar a árvore inicial a partir do JsonLogic
     const initialTree = QbUtils.loadFromJsonLogic(jsonLogicObject, config);
     setTree(initialTree ?? null);
   }, []);
@@ -138,6 +138,7 @@ export default function TestePage() {
             {tree ? JSON.stringify(tree, null, 2) : 'Nenhuma árvore gerada ainda.'}
           </pre>
         </div>
+        
         {/* Painel jsonLogic */}
         <div style={{ flex: 1, minWidth: 280, background: '#f7f7f7', borderRadius: 8, padding: 16, fontSize: 14, color: '#111' }}>
           <strong style={{ color: '#000' }}>JsonLogic:</strong>
