@@ -47,16 +47,18 @@
   margin: 2px 0;
 }
 
-/* 🟥 Estilizando o botão de deletar da REGRA */
+/* 🟥 Estilizando o botão Delete da REGRA */
 /* Este seletor é específico para o botão "Delete" que fica ao lado de cada regra,
    baseado no HTML que você forneceu. */
 .query-builder .rule--header > button {
-  border-color: #ff4d4f !important; /* Cor vermelha do Ant Design para perigo */
-  color: #ff4d4f;
+  border: 1px solid #a5222d; /* Borda vermelha, como nos outros botões */
+  background-color: #ffe1e0; /* Fundo vermelho suave */
+  color: #a5222d; /* Texto vermelho */
+  border-radius: 8px !important; /* Mantendo o padrão dos outros botões */
+  padding: 0px 4px; /* Ajustando o padding para ficar consistente */
 }
-
 .query-builder .rule--header > button:hover {
-  background-color: #fff1f0; /* Fundo levemente avermelhado no hover */
-  border-color: #ff7875 !important;
-  color: #ff7875;
+  background-color: #ffccc7; /* Fundo um pouco mais forte no hover */
+  border-color: #f5222d !important; /* Borda mais forte no hover */
+  color: #f5222d;
 }
