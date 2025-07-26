@@ -31,3 +31,11 @@
   background: #fafdff;
   margin-right: 4px;
 }
+
+.query-builder .rule--func--bracket-before,
+.query-builder .rule--func--bracket-after {
+  font-weight: bold;
+  color: #0077cc;
+  font-size: 18px;
+  margin: 0 2px;
+}
