@@ -138,7 +138,15 @@ export default function TestePage() {
             {tree ? JSON.stringify(tree, null, 2) : 'Nenhuma árvore gerada ainda.'}
           </pre>
         </div>
-        
+
+        {/* Painel árvore serializável */}
+        <div style={{ flex: 1, minWidth: 280, background: '#e7f7ff', borderRadius: 8, padding: 16, fontSize: 14, color: '#111' }}>
+          <strong style={{ color: '#0077cc' }}>Árvore serializável (getTree):</strong>
+          <pre style={{ whiteSpace: 'pre-wrap', wordBreak: 'break-all', background: '#fff', padding: 8, borderRadius: 4, border: '1px solid #cceeff', color: '#000' }}>
+            {tree ? JSON.stringify(QbUtils.getTree(tree), null, 2) : 'Nenhuma árvore gerada ainda.'}
+          </pre>
+        </div>
+
         {/* Painel jsonLogic */}
         <div style={{ flex: 1, minWidth: 280, background: '#f7f7f7', borderRadius: 8, padding: 16, fontSize: 14, color: '#111' }}>
           <strong style={{ color: '#000' }}>JsonLogic:</strong>
