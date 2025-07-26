@@ -17,3 +17,17 @@
   padding-left: 4px;
   padding-right: 4px;
 }
+
+/* 🟦 Melhorando visualização dos inputs numéricos */
+.query-builder input[type="number"] {
+  border: 1px solid #0077cc !important;
+  border-radius: 6px !important;
+  padding: 2px 4px !important;
+  width: 48px !important;
+  /* Tamanho fixo menor */
+  min-width: 0 !important;
+  /* Remove largura mínima */
+  font-size: 15px;
+  background: #fafdff;
+  margin-right: 4px;
+}
