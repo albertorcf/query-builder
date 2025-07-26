@@ -11,28 +11,30 @@ import type { Config, ImmutableTree } from '@react-awesome-query-builder/ui'
 type MyQueryBuilderProps = {
   config: Config;
   onTreeChange: (tree: ImmutableTree) => void;
+  initialTree?: ImmutableTree | null;
 };
 
 // ============================================================================
 // ✨ Componente MyQueryBuilder
 // ============================================================================
 export default function MyQueryBuilder(props: MyQueryBuilderProps) {
-  const { config, onTreeChange } = props;
-  const [tree, setTree] = useState<ImmutableTree | null>(null);
+  const { config, onTreeChange, initialTree } = props;
+  const [tree, setTree] = useState<ImmutableTree | null>(initialTree ?? null);
   const [isClient, setIsClient] = useState(false);
-
   // 🔄 Efeito para inicializar a árvore de consulta quando o componente é montado no cliente
-  // ou quando a configuração (config) é alterada.
+  // ou quando a configuração (config) ou initialTree é alterada.
   useEffect(() => {
     setIsClient(true);
-    // `checkTree` está obsoleto. Usamos `sanitizeTree` que retorna um objeto
-    // com a árvore corrigida na propriedade `fixedTree`.
-    const { fixedTree } = QbUtils.Validation.sanitizeTree(
-      QbUtils.loadTree({ id: QbUtils.uuid(), type: 'group' }),
-      config
-    );
-    setTree(fixedTree);
-  }, [config]); // Depende da config para re-inicializar se ela mudar
+    if (initialTree) {
+      setTree(initialTree);
+    } else {
+      const { fixedTree } = QbUtils.Validation.sanitizeTree(
+        QbUtils.loadTree({ id: QbUtils.uuid(), type: 'group' }),
+        config
+      );
+      setTree(fixedTree);
+    }
+  }, [config, initialTree]);
 
   // 🔄 Função de callback para quando a árvore de consulta é alterada
   const onChange = (immutableTree: ImmutableTree, config: Config) => {

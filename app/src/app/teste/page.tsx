@@ -127,7 +127,7 @@ export default function TestePage() {
     <div>
       <h2>Teste do Query Builder</h2>
       {/* 🧩 Renderiza o componente QueryBuilder, passando a configuração e o callback */}
-      <MyQueryBuilder config={config} onTreeChange={handleTreeChange} />
+      <MyQueryBuilder config={config} onTreeChange={handleTreeChange} initialTree={tree} />
 
       {/* Painéis lado a lado responsivos */}
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: 24, marginTop: 32 }}>
