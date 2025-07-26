@@ -1,5 +1,5 @@
 // app/src/components/QueryBuilder/MyQueryBuilder.tsx
-'use client'
+"use client";
 import React, { useState, useEffect } from 'react'
 import { Builder, Utils as QbUtils } from '@react-awesome-query-builder/ui'
 import { Query } from '@react-awesome-query-builder/antd'

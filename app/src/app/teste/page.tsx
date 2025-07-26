@@ -63,11 +63,50 @@ const config: Config = {
 };
 
 // ============================================================================
+// ✨ Converte jsonLogic to ImmutableTree
+// ============================================================================
+/*
+const jsonLogicObject = {
+  "and": [{
+     "==": [
+      { "var": "age" },
+      { "soma": [{ "multiplica": [1, 2] }, 3] }
+    ] 
+  }]
+};
+*/
+/*
+const jsonLogicObject = {
+  "and": [{
+    "==": [
+      { "var": "age" },
+      { "soma": [1, 2] }
+    ]
+  }]
+};
+*/
+const jsonLogicObject = {
+  "and": [{
+    "==": [
+      { "var": "age" },
+      5
+    ]
+  }]
+};
+//const initialTree = QbUtils.loadFromJsonLogic(jsonLogicObject, config);
+
+// ============================================================================
 // ✨ Página de Teste
 // ============================================================================
 export default function TestePage() {
   // 🌳 Estado para armazenar a árvore de consulta (estrutura de dados imutável)
   const [tree, setTree] = React.useState<ImmutableTree | null>(null);
+  //const [tree, setTree] = React.useState<ImmutableTree | null>(initialTree ?? null);
+
+  React.useEffect(() => {
+    const initialTree = QbUtils.loadFromJsonLogic(jsonLogicObject, config);
+    setTree(initialTree ?? null);
+  }, []);
 
   // 🔄 Callback para atualizar o estado da árvore quando ela muda no componente filho
   const handleTreeChange = (newTree: ImmutableTree) => {
