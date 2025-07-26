@@ -39,3 +39,10 @@
   font-size: 18px;
   margin: 0 2px;
 }
+
+.query-builder .rule--func--wrapper {
+  background: #e7f7ff;
+  border-radius: 8px;
+  padding: 4px 8px;
+  margin: 2px 0;
+}
