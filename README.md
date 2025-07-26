@@ -1,6 +1,8 @@
 # query-builder
 react-awesome-query-builder + jsonLogic
 
+dev/nextjs/query-builder
+
 - [Setup](#setup)
 - 🗂️ [Estrutura de pastas e arquivos do projeto](#️-estrutura-de-pastas-e-arquivos-do-projeto)
 - ⚠️ [Diretrizes para desenvolvimento - Workflow de trabalho](#️-diretrizes-para-desenvolvimento---workflow-de-trabalho)
@@ -15,9 +17,9 @@ pnpm add @react-awesome-query-builder/ui @react-awesome-query-builder/antd json-
 # 🗂️ Estrutura de pastas e arquivos do projeto
 
 ```sh
-clear && date && tree -a -L 4 -I 'node_modules' -I '.git'
+clear && date && tree -a -L 5 -I 'node_modules' -I '.git' -I '.next'
 
-ter 22 jul 2025 18:40:30 -03
+sáb 26 jul 2025 14:06:03 -03
 .
 ├── app
 │   ├── .gitignore
@@ -35,16 +37,25 @@ ter 22 jul 2025 18:40:30 -03
 │   │   └── window.svg
 │   ├── README.md
 │   ├── src
-│   │   └── app
-│   │       ├── favicon.ico
-│   │       ├── globals.css
-│   │       ├── layout.tsx
-│   │       └── page.tsx
+│   │   ├── app
+│   │   │   ├── favicon.ico
+│   │   │   ├── globals.css
+│   │   │   ├── layout.tsx
+│   │   │   ├── page.tsx
+│   │   │   └── teste
+│   │   │       └── page.tsx
+│   │   ├── components
+│   │   │   └── QueryBuilder
+│   │   │       ├── MyQueryBuilder.css
+│   │   │       └── MyQueryBuilder.tsx
+│   │   └── mocks
+│   │       ├── contextHelpers.ts
+│   │       └── mockCandles.ts
 │   └── tsconfig.json
 ├── LICENSE
 └── README.md
 
-5 directories, 20 files
+9 directories, 25 files
 ```
 
 
