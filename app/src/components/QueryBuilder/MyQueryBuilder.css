@@ -1,64 +1,126 @@
-/* Customização do componente QueryBuilder (Ant Design) */
+/* Base geral */
 .query-builder {
-  color: #000 !important;
-  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  max-width: 100%;
 }
 
-.query-builder .group--actions button:not(:last-child),
-.query-builder .rule--actions button:not(:last-child) {
+/* Grupos */
+.query-builder .group {
+  border: 1px solid #ddd;
+  background-color: #ffffff;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  padding: 1rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Botões do grupo */
+.query-builder .group--actions button {
+  background-color: #e9ecef;
+  border: 1px solid #ced4da;
+  color: #333;
+  padding: 4px 8px;
+  border-radius: 6px;
   margin-right: 6px;
+  cursor: pointer;
 }
 
-.query-builder .group--actions button,
-.query-builder .rule--actions button {
-/*.query-builder .rule--header button {*/
-  border: 1px solid #444 !important;
-  border-radius: 8px !important;
-  padding-left: 4px;
-  padding-right: 4px;
+.query-builder .group--actions button:hover {
+  background-color: #dee2e6;
 }
 
-/* 🟦 Melhorando visualização dos inputs numéricos */
+/* Checkbox "Not" */
+.query-builder .group--conjunctions {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.query-builder .group--conjunctions input[type="checkbox"] {
+  margin-right: 0.4rem;
+}
+
+/* Regras */
+.query-builder .rule {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px dashed #ccc;
+}
+
+/* Dropdowns e inputs */
+.query-builder select,
 .query-builder input[type="number"] {
-  border: 1px solid #0077cc;
-  border-radius: 4px;
-  padding: 0px 4px;
-  width: 48px !important;
-  /* Tamanho fixo menor */
-  min-width: 0 !important;
-  /* Remove largura mínima */
-  font-size: 15px;
-  background: #fafdff;
-  margin-right: 4px;
+  padding: 4px 8px;
+  font-size: 14px;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  background-color: #fff;
+  min-width: 64px;
+}
+
+/* Funções (estilo visual com destaque suave) */
+.query-builder .rule--func--wrapper {
+  background-color: #f1f3f5;
+  padding: 6px 10px;
+  border-left: 3px solid #6c757d;
+  border-radius: 6px;
+  margin: 4px 0;
 }
 
 .query-builder .rule--func--bracket-before,
 .query-builder .rule--func--bracket-after {
   font-weight: bold;
-  color: #0077cc;
-  font-size: 18px;
-  margin: 0 2px;
+  color: #6c757d;
+  margin: 0 4px;
 }
 
-.query-builder .rule--func--wrapper {
-  background: #e7f7ff;
-  border-radius: 8px;
-  padding: 4px 8px;
-  margin: 2px 0;
+/* Separador de argumentos da função */
+.query-builder .rule--func--arg-sep {
+  color: #adb5bd;
+  font-weight: bold;
+  padding: 0 2px;
 }
 
-/* 🟥 Estilizando o botão Delete da REGRA */
-/* Este seletor é específico para o botão "Delete" que fica ao lado de cada regra,
-   baseado no HTML que você forneceu. */
-.query-builder .rule--header > button {
-  border: 1px solid #a5222d; /* Borda vermelha, como nos outros botões */
-  background-color: #ffe1e0; /* Fundo vermelho suave */
-  color: #a5222d; /* Texto vermelho */
-  border-radius: 8px !important; /* Mantendo o padrão dos outros botões */
-  padding: 0px 4px; /* Ajustando o padding para ficar consistente */
+/* Botão Delete */
+.query-builder .rule--header>button {
+  background-color: #f8d7da;
+  border: 1px solid #f5c2c7;
+  color: #842029;
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-size: 13px;
 }
-.query-builder .rule--header > button:hover {
-  background-color: #ffccc7; /* Fundo um pouco mais forte no hover */
-  border-color: #f5222d !important; /* Borda mais forte no hover */
-  color: #f5222d;
+
+.query-builder .rule--header>button:hover {
+  background-color: #f1b0b7;
+  border-color: #dc3545;
+  color: #dc3545;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .query-builder .rule {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .query-builder select,
+  .query-builder input[type="number"] {
+    width: 100%;
+  }
+
+  .query-builder .rule--func--wrapper {
+    width: 100%;
+  }
+
+  .query-builder .group {
+    padding: 0.75rem;
+  }
 }
