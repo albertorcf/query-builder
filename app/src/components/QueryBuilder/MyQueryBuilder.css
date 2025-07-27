@@ -124,3 +124,58 @@
     padding: 0.75rem;
   }
 }
+
+
+
+
+
+/* 🔹 Área de Conjunções: Not, And, Or */
+.query-builder .group--conjunctions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.query-builder .group--conjunctions input[type="checkbox"],
+.query-builder .group--conjunctions input[type="radio"] {
+  margin-right: 4px;
+}
+
+.query-builder .group--conjunctions label {
+  font-size: 14px;
+  color: #444;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+/* 🔹 Destacar o botão de conjunção ativo */
+.query-builder .group--conjunctions input[type="radio"]:checked+label {
+  font-weight: bold;
+  color: #0077cc;
+}
+
+/* 🔹 Drag handles com ícone */
+.qb-drag-handler {
+  margin-right: 8px;
+  cursor: grab;
+}
+
+/* 🔹 Bordas mais suaves em grupos internos */
+.query-builder .group--children {
+  border-left: 2px solid #dee2e6;
+  margin-left: 10px;
+  padding-left: 12px;
+}
+
+/* 🔹 Estilização do grupo filho (mais leve) */
+.query-builder .group.one--child {
+  background-color: #fafafa;
+  border: 1px dashed #ddd;
+}
+
+/* 🔹 Melhor separação visual entre grupos */
+.query-builder .group-or-rule-container.group-container:not(:last-child) {
+  margin-bottom: 16px;
+}
