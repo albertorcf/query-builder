@@ -2,8 +2,9 @@
 "use client";
 import React, { useState, useEffect } from 'react'
 import { Builder, Utils as QbUtils } from '@react-awesome-query-builder/ui'
-import { Query } from '@react-awesome-query-builder/antd'
-import '@react-awesome-query-builder/ui/css/styles.css'
+import { Query } from '@react-awesome-query-builder/bootstrap'
+//import '@react-awesome-query-builder/ui/css/styles.css'
+import '@react-awesome-query-builder/antd/css/styles.css'
 import './MyQueryBuilder.css'
 import type { Config, ImmutableTree } from '@react-awesome-query-builder/ui'
 
