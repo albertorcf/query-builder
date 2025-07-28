@@ -3,9 +3,11 @@
 import React from "react";
 import MyQueryBuilder from "@/components/QueryBuilder/MyQueryBuilder";
 import inicialTree from "./inicialTree.json";
-import type { Config, ImmutableTree } from '@react-awesome-query-builder/ui';
+import type { Config, ImmutableTree } from '@react-awesome-query-builder/antd';
 import { BasicConfig } from '@react-awesome-query-builder/antd';
-import { Utils as QbUtils } from '@react-awesome-query-builder/ui';
+import { Utils as QbUtils } from '@react-awesome-query-builder/antd';
+import { AntdConfig, AntdWidgets } from '@react-awesome-query-builder/antd';
+import "@/components/QueryBuilder/MyQueryBuilder.css";
 
 // ============================================================================
 // ⚙️ Configuração do Query Builder
@@ -14,7 +16,8 @@ import { Utils as QbUtils } from '@react-awesome-query-builder/ui';
 // Ela foi movida do componente MyQueryBuilder para a página,
 // permitindo que MyQueryBuilder seja verdadeiramente reutilizável.
 const config: Config = {
-  ...BasicConfig,
+  //...BasicConfig,
+  ...AntdConfig,
   fields: {
     age: {
       label: 'Idade',
@@ -27,7 +30,7 @@ const config: Config = {
       label: 'Idade Máxima',
       type: 'number',
       fieldSettings: { min: 0 },
-      valueSources: ['value'],
+      valueSources: ['value', 'field', 'func'],
       preferWidgets: ['number'],
     },
     isActive: {
