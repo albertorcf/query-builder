@@ -14,7 +14,8 @@
 */
 .query-builder .group--actions .action--DELETE.ant-btn-dangerous,
 .query-builder .rule--header .action--DELETE.ant-btn-dangerous {
-  border-color: #ccc;
+  border-color: #ccc !important;
+  /*border-color: rgba(128, 128, 128, 0.1) !important;*/
 /*
   background-clip: padding-box;
   box-shadow: none;
