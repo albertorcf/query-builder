@@ -24,3 +24,10 @@
   padding-top: 0px;
 */
 }
+
+/* Estilo de hover para o botão de deletar */
+.query-builder .group--actions .action--DELETE.ant-btn-dangerous:hover,
+.query-builder .rule--header .action--DELETE.ant-btn-dangerous:hover {
+  background-color: #fff1f0 !important; /* Vermelho suave padrão Ant Design */
+  border-color: red !important;
+}
