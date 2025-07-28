@@ -17,7 +17,7 @@
   border-color: transparent;
   background-clip: padding-box; /* Garante que o fundo não "vaze" para a área da borda, restaurando a separação visual */
   box-shadow: none;
-  min-height: 25px;
+  min-height: 25;
 }
 
 /* Adiciona um feedback visual no hover, já que a borda não muda mais de cor */
