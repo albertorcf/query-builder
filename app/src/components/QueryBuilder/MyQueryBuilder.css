@@ -14,14 +14,12 @@
 */
 .query-builder .group--actions .action--DELETE.ant-btn-dangerous,
 .query-builder .rule--header .action--DELETE.ant-btn-dangerous {
-  border-color: transparent;
-  background-clip: padding-box; /* Garante que o fundo não "vaze" para a área da borda, restaurando a separação visual */
+  border-color: #ccc;
+/*
+  background-clip: padding-box;
   box-shadow: none;
-  min-height: 25;
-}
-
-/* Adiciona um feedback visual no hover, já que a borda não muda mais de cor */
-.query-builder .group--actions .action--DELETE.ant-btn-dangerous:hover,
-.query-builder .rule--header .action--DELETE.ant-btn-dangerous:hover {
-  background-color: rgba(0, 0, 0, 0.04); /* Um cinza bem claro para o hover */
+  min-height: 25px;
+  vertical-align: middle;
+  padding-top: 0px;
+*/
 }
