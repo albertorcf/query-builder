@@ -8,11 +8,19 @@
   /* max-width: 100%; */
 }
 
-/* Remove borda vermelha do botão de deletar grupo */
 /*
-.ant-btn-dangerous,
-.ant-btn-color-dangerous {
-  border-color: transparent !important;
-  box-shadow: none !important;
-}
+  Remove a borda vermelha dos botões de deletar (grupo e regra),
+  mantendo o ícone vermelho para indicar uma ação de exclusão.
 */
+.query-builder .group--actions .action--DELETE.ant-btn-dangerous,
+.query-builder .rule--header .action--DELETE.ant-btn-dangerous {
+  border-color: transparent;
+  background-clip: padding-box; /* Garante que o fundo não "vaze" para a área da borda, restaurando a separação visual */
+  box-shadow: none;
+}
+
+/* Adiciona um feedback visual no hover, já que a borda não muda mais de cor */
+.query-builder .group--actions .action--DELETE.ant-btn-dangerous:hover,
+.query-builder .rule--header .action--DELETE.ant-btn-dangerous:hover {
+  background-color: rgba(0, 0, 0, 0.04); /* Um cinza bem claro para o hover */
+}
