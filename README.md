@@ -17,9 +17,9 @@ pnpm add @react-awesome-query-builder/ui @react-awesome-query-builder/antd json-
 # 🗂️ Estrutura de pastas e arquivos do projeto
 
 ```sh
-clear && date && tree -a -L 5 -I 'node_modules' -I '.git' -I '.next'
+clear && date && tree -a -L 6 -I 'node_modules' -I '.git' -I '.next'
 
-ter 29 jul 2025 17:43:14 -03
+ter 29 jul 2025 17:45:06 -03
 .
 ├── app
 │   ├── .gitignore
@@ -50,8 +50,7 @@ ter 29 jul 2025 17:43:14 -03
 │   │   │   └── QueryBuilder
 │   │   │       ├── bk000.css
 │   │   │       ├── MyQueryBuilder.css
-│   │   │       ├── MyQueryBuilder.tsx
-│   │   │       └── widgets
+│   │   │       └── MyQueryBuilder.tsx
 │   │   └── mocks
 │   │       ├── contextHelpers.ts
 │   │       └── mockCandles.ts
@@ -61,7 +60,6 @@ ter 29 jul 2025 17:43:14 -03
 
 10 directories, 28 files
 ```
-
 
 # ⚠️ Diretrizes para desenvolvimento - Workflow de trabalho
 
