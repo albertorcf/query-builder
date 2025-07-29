@@ -1,0 +1,4 @@
+/* Esconde o botão "+ Add group" do QueryBuilder (Ant Design) */
+.query-builder .group--actions .action--ADD-GROUP {
+  display: none !important;
+}
