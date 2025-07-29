@@ -6,10 +6,10 @@ export const inicialTree = {
   "children1": [
     {
       "type": "rule",
-      "id": "bbbaab99-89ab-4cde-b012-319848b97f4b",
+      "id": "bb989a8b-0123-4456-b89a-b1985832e3c6",
       "properties": {
-        "field": "age",
         "fieldSrc": "field",
+        "field": "returnValue",
         "operator": "equal",
         "value": [
           {

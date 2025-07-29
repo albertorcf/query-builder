@@ -20,41 +20,11 @@ import "./query-builder-actions.css";
 const config: Config = {
   ...AntdConfig,
   fields: {
-    age: {
-      label: 'Idade',
+    returnValue: {
+      label: 'returnValue',
       type: 'number',
-      fieldSettings: { min: 0 },
-      valueSources: ['value', 'field', 'func'],
+      valueSources: ['func'],
       preferWidgets: ['number'],
-    },
-    maxAge: {
-      label: 'Idade Máxima',
-      type: 'number',
-      fieldSettings: { min: 0 },
-      valueSources: ['value', 'field', 'func'],
-      preferWidgets: ['number'],
-    },
-    isActive: {
-      label: 'Está Ativo',
-      type: 'boolean',
-      valueSources: ['value'],
-      preferWidgets: ['boolean'],
-    },
-    tags: {
-      label: 'Tags',
-      type: 'multiselect',
-      fieldSettings: {
-        listValues: [
-          { value: 'tag1', title: 'Tag 1' },
-          { value: 'tag2', title: 'Tag 2' },
-        ],
-      },
-      preferWidgets: ['multiSelect'],
-    },
-    initData: {
-      label: 'Data Inicial',
-      type: 'date',
-      preferWidgets: ['date'],
     },
   },
   settings: {
