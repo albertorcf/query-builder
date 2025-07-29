@@ -19,6 +19,7 @@ import "@/components/QueryBuilder/MyQueryBuilder.css";
 const config: Config = {
   //...BasicConfig,
   ...AntdConfig,
+  
   fields: {
     age: {
       label: 'Idade',
@@ -57,6 +58,7 @@ const config: Config = {
       preferWidgets: ['date'],
     },
   },
+
   funcs: {
     soma: {
       label: "Soma",
