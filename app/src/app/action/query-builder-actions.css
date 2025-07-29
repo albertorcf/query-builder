@@ -15,6 +15,21 @@
   background: rgba(250, 240, 210, .5);
   border: 1px solid #dcc896;
   */
+  /*
   background: rgba(255, 190, 190, 0.8);
   border: 1px solid #fcc;
+  */
+  /* Cinza quase branco, leve toque rosado */
+  /*
+  background: #f3eded;
+  border: 1px solid #e0cccc;
+  */
+  /* Cinza rosado */
+  /*
+  background: #f4dddd;
+  border: 1px solid #e5bdbd;
+  */
+  /* Cinza rosado mais escuro */
+  background: #948888;
+  border: 1px solid #b4aaaa;
 }
