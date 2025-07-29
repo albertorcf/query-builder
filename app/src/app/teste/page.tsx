@@ -2,7 +2,7 @@
 "use client";
 import React from "react";
 import MyQueryBuilder from "@/components/QueryBuilder/MyQueryBuilder";
-import inicialTree from "./inicialTree.json";
+import { inicialTree } from "./inicialTree";
 import type { Config, ImmutableTree } from '@react-awesome-query-builder/antd';
 import { BasicConfig } from '@react-awesome-query-builder/antd';
 import { Utils as QbUtils } from '@react-awesome-query-builder/antd';
