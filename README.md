@@ -19,7 +19,7 @@ pnpm add @react-awesome-query-builder/ui @react-awesome-query-builder/antd json-
 ```sh
 clear && date && tree -a -L 5 -I 'node_modules' -I '.git' -I '.next'
 
-sáb 26 jul 2025 14:06:03 -03
+ter 29 jul 2025 17:43:14 -03
 .
 ├── app
 │   ├── .gitignore
@@ -43,11 +43,15 @@ sáb 26 jul 2025 14:06:03 -03
 │   │   │   ├── layout.tsx
 │   │   │   ├── page.tsx
 │   │   │   └── teste
+│   │   │       ├── inicialTree.json
+│   │   │       ├── inicialTree.ts
 │   │   │       └── page.tsx
 │   │   ├── components
 │   │   │   └── QueryBuilder
+│   │   │       ├── bk000.css
 │   │   │       ├── MyQueryBuilder.css
-│   │   │       └── MyQueryBuilder.tsx
+│   │   │       ├── MyQueryBuilder.tsx
+│   │   │       └── widgets
 │   │   └── mocks
 │   │       ├── contextHelpers.ts
 │   │       └── mockCandles.ts
@@ -55,7 +59,7 @@ sáb 26 jul 2025 14:06:03 -03
 ├── LICENSE
 └── README.md
 
-9 directories, 25 files
+10 directories, 28 files
 ```
 
 
