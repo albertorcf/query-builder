@@ -10,6 +10,11 @@
   display: none !important;
 }
 
+/* Arredonda todos os cantos do botão "Add action" */
+.query-builder .group--actions .action--ADD-RULE.ant-btn {
+  border-radius: 6px !important;
+}
+
 .query-builder .group {
   /*
   background: rgba(250, 240, 210, .5);
