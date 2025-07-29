@@ -9,3 +9,12 @@
 .query-builder .group--actions .action--ADD-GROUP {
   display: none !important;
 }
+
+.query-builder .group {
+  /*
+  background: rgba(250, 240, 210, .5);
+  border: 1px solid #dcc896;
+  */
+  background: rgba(255, 190, 190, 0.8);
+  border: 1px solid #fcc;
+}
