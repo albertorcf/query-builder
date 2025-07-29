@@ -60,38 +60,6 @@ const config: Config = {
 };
 
 // ============================================================================
-// ✨ JsonLogic inicial
-// ============================================================================
-/*
-const jsonLogicObject = {
-  "and": [{
-     "==": [
-      { "var": "age" },
-      { "soma": [{ "multiplica": [1, 2] }, 3] }
-    ] 
-  }]
-};
-*/
-/*
-const jsonLogicObject = {
-  "and": [{
-    "==": [
-      { "var": "age" },
-      { "soma": [1, 2] }
-    ]
-  }]
-};
-*/
-const jsonLogicObject = {
-  "and": [{
-    "==": [
-      { "var": "age" },
-      5
-    ]
-  }]
-};
-
-// ============================================================================
 // ✨ Página de Teste
 // ============================================================================
 export default function TestePage() {
@@ -146,7 +114,7 @@ export default function TestePage() {
         </div>
 
         {/* Painel jsonLogic */}
-        <div style={{ flex: 1, minWidth: 280, background: '#f7f7f7', borderRadius: 8, padding: 16, fontSize: 14, color: '#111' }}>
+        <div style={{ flex: 1, minWidth: 280, background: '#ffe7e7', borderRadius: 8, padding: 16, fontSize: 14, color: '#111' }}>
           <strong style={{ color: '#000' }}>JsonLogic:</strong>
           <pre style={{ whiteSpace: 'pre-wrap', wordBreak: 'break-all', background: '#fff', padding: 8, borderRadius: 4, border: '1px solid #eee', color: '#000' }}>
             {jsonLogic ? JSON.stringify(jsonLogic, null, 2) : 'Nenhum jsonLogic gerado ainda.'}
