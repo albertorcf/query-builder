@@ -1,7 +1,10 @@
 /* Esconde o grupo de botões And/Or do QueryBuilder (Ant Design) */
+/*
 .query-builder .group--conjunctions {
   display: none !important;
 }
+*/
+
 /* Esconde o botão "+ Add group" do QueryBuilder (Ant Design) */
 .query-builder .group--actions .action--ADD-GROUP {
   display: none !important;
