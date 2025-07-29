@@ -51,6 +51,11 @@ const config: Config = {
       },
       preferWidgets: ['multiSelect'],
     },
+    initData: {
+      label: 'Data Inicial',
+      type: 'date',
+      preferWidgets: ['date'],
+    },
   },
   funcs: {
     soma: {
