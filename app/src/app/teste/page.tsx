@@ -40,6 +40,17 @@ const config: Config = {
       valueSources: ['value'],
       preferWidgets: ['boolean'],
     },
+    tags: {
+      label: 'Tags',
+      type: 'multiselect',
+      fieldSettings: {
+        listValues: [
+          { value: 'tag1', title: 'Tag 1' },
+          { value: 'tag2', title: 'Tag 2' },
+        ],
+      },
+      preferWidgets: ['multiSelect'],
+    },
   },
   funcs: {
     soma: {
