@@ -3,7 +3,9 @@
 import { useState, useEffect } from 'react'
 import type { JsonGroup, Config, ImmutableTree, BuilderProps } from '@react-awesome-query-builder/antd'; // for TS example
 import { Query, Builder, Utils as QbUtils } from '@react-awesome-query-builder/antd';
-//import './MyQueryBuilder.css'
+
+import '@react-awesome-query-builder/antd/css/styles.css';
+import './MyQueryBuilder.css'
 
 //const InitialConfig = AntdConfig;
 

@@ -8,7 +8,7 @@ import { BasicConfig } from '@react-awesome-query-builder/antd';
 import { Utils as QbUtils } from '@react-awesome-query-builder/antd';
 import { AntdConfig, AntdWidgets } from '@react-awesome-query-builder/antd';
 import '@react-awesome-query-builder/antd/css/styles.css';
-import "@/components/query-builder/MyQueryBuilder.css";
+//import "@/components/query-builder/MyQueryBuilder.css";
 import "./query-builder-actions.css";
 
 // ============================================================================
@@ -91,7 +91,10 @@ export default function TestePage() {
 
   return (
     <div>
-      <h2>Teste do Query Builder</h2>
+      <h2 className="bg-[#f8eaea] border border-[#e0bcbc] rounded-lg px-5 py-2 mb-4 text-[#a94442] font-semibold text-[1.4rem]">
+        Teste do Query Builder - Actions
+      </h2>
+
       {/* 🧩 Renderiza o componente QueryBuilder, passando a configuração e o callback */}
       <MyQueryBuilder config={config} onTreeChange={handleTreeChange} initialTree={tree} />
 
