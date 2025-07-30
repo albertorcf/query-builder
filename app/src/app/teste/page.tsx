@@ -1,14 +1,14 @@
 // app/src/app/teste/page.tsx
 "use client";
 import React from "react";
-import MyQueryBuilder from "@/components/QueryBuilder/MyQueryBuilder";
+import MyQueryBuilder from "@/components/query-builder/MyQueryBuilder";
 import { inicialTree } from "./inicialTree";
 import type { Config, ImmutableTree } from '@react-awesome-query-builder/antd';
 import { BasicConfig } from '@react-awesome-query-builder/antd';
 import { Utils as QbUtils } from '@react-awesome-query-builder/antd';
 import { AntdConfig, AntdWidgets } from '@react-awesome-query-builder/antd';
 import '@react-awesome-query-builder/antd/css/styles.css';
-import "@/components/QueryBuilder/MyQueryBuilder.css";
+import "@/components/query-builder/MyQueryBuilder.css";
 
 // ============================================================================
 // ⚙️ Configuração do Query Builder
@@ -19,7 +19,7 @@ import "@/components/QueryBuilder/MyQueryBuilder.css";
 const config: Config = {
   //...BasicConfig,
   ...AntdConfig,
-  
+
   fields: {
     age: {
       label: 'Idade',
