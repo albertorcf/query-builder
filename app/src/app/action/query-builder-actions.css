@@ -1,3 +1,18 @@
+.query-builder {
+  margin: 0;
+  padding: 0;
+}
+
+.query-builder .group-or-rule-container {
+  padding-right: 0;
+}
+
+.group--children,
+.group--children.hide--conjs.hide--line.one--child {
+  padding-right: 10px;
+}
+
+
 /* Esconde o grupo de botões And/Or do QueryBuilder (Ant Design) */
 /*
 .query-builder .group--conjunctions {
@@ -40,6 +55,6 @@
   border: 1px solid #b4aaaa;
   */
 
-  background: #ffe7e7;
-  border: 1px solid #ffa7a7;
+  background: #ffe8e8;
+  border: 1px solid #ffa8a8;
 }

@@ -96,7 +96,8 @@ export default function TestePage() {
       <MyQueryBuilder config={config} onTreeChange={handleTreeChange} initialTree={tree} />
 
       {/* Painéis lado a lado responsivos */}
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: 24, marginTop: 32 }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: 24, marginTop: 16 }}>
+        
         {/* Árvore do componente */}
         <div style={{ flex: 1, minWidth: 280, background: '#f7f7f7', borderRadius: 8, padding: 16, fontSize: 14, color: '#111' }}>
           <strong style={{ color: '#000' }}>Árvore interna (JSON):</strong>
