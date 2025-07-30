@@ -1,11 +1,16 @@
 /* Base geral */
 .query-builder {
-  /*font-family: 'Segoe UI', sans-serif;*/
-  color: #333;
-  /*background-color: #f8f9fa;*/
-  padding: 0.5rem;
-  /* border-radius: 6px; */
-  /* max-width: 100%; */
+  margin: 0;
+  padding: 0;
+}
+
+.query-builder .group-or-rule-container {
+  padding-right: 0;
+}
+
+.group--children,
+.group--children.hide--conjs.hide--line.one--child {
+  padding-right: 10px;
 }
 
 /*
