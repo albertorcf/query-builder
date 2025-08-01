@@ -90,7 +90,7 @@ export default function TestePage() {
   return (
     <div>
       <h2 className="bg-[#f8eaea] border border-[#e0bcbc] rounded-lg px-5 py-2 mb-4 text-[#a94442] font-semibold text-[1.4rem]">
-        ⚡ Teste do Query Builder - Actions
+        ⚡ Query Builder - Actions
       </h2>
 
       {/* 🧩 Renderiza o componente QueryBuilder, passando a configuração e o callback */}
