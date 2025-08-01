@@ -1,8 +1,9 @@
 // app/src/components/query-builder/action/ActionBuilder.tsx
 "use client";
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import type { JsonGroup, Config, ImmutableTree, BuilderProps } from '@react-awesome-query-builder/antd'; // for TS example
 import { Query, Builder, Utils as QbUtils } from '@react-awesome-query-builder/antd';
+import { AntdConfig, AntdWidgets } from '@react-awesome-query-builder/antd';
 
 import '@react-awesome-query-builder/antd/css/styles.css';
 import '../MyQueryBuilder.css';
@@ -22,7 +23,20 @@ export default function ActionBuilder(props: MyQueryBuilderProps) {
   const { config, onTreeChange, initialTree } = props;
   const [tree, setTree] = useState<ImmutableTree | null>(initialTree ?? null);
   const [isClient, setIsClient] = useState(false);
-  
+
+  // 🔧 Configuração específica para Actions - usando useMemo para otimização
+  // O actionConfig é criado usando useMemo para evitar recriações desnecessárias do objeto config a cada render
+  const actionConfig = useMemo(() => {
+    return {
+      ...config,
+      settings: {
+        ...AntdConfig.settings,
+        showNot: false, // Esconde botão Not
+        addRuleLabel: 'Add action', // Muda texto do botão Add rule
+      },
+    };
+  }, [config]);
+
   // 🔄 Efeito para inicializar a árvore de consulta quando o componente é montado no cliente
   // ou quando a configuração (config) ou initialTree é alterada.
   useEffect(() => {
@@ -32,11 +46,11 @@ export default function ActionBuilder(props: MyQueryBuilderProps) {
     } else {
       const { fixedTree } = QbUtils.Validation.sanitizeTree(
         QbUtils.loadTree({ id: QbUtils.uuid(), type: 'group' }),
-        config
+        actionConfig
       );
       setTree(fixedTree);
     }
-  }, [config, initialTree]);
+  }, [actionConfig, initialTree]);  // Depende de actionConfig ao invés de config
 
   // 🔄 Função de callback para quando a árvore de consulta é alterada
   const onChange = (immutableTree: ImmutableTree, config: Config) => {
@@ -55,7 +69,7 @@ export default function ActionBuilder(props: MyQueryBuilderProps) {
   return (
     <div>
       <Query
-        {...config}
+        {...actionConfig}
         value={tree}
         onChange={onChange}
         renderBuilder={(props) => (

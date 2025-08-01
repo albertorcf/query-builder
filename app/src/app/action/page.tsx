@@ -27,12 +27,14 @@ const config: Config = {
       preferWidgets: ['number'],
     },
   },
-  
+
+  /*
   settings: {
     ...AntdConfig.settings,
     showNot: false, // Esconde botão Not
     addRuleLabel: 'Add action', // Muda texto do botão Add rule
   },
+  */
 
   funcs: {
     soma: {
