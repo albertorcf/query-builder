@@ -52,7 +52,7 @@ export default function Home() {
           </a>
         </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row mt-3">
+        <div className="flex gap-4 items-center flex-col sm:flex-row">
           <Link
             href="/condition"
             className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center
