@@ -20,7 +20,7 @@ type MyQueryBuilderProps = {
 // ============================================================================
 // ✨ Componente MyQueryBuilder
 // ============================================================================
-export default function MyQueryBuilder(props: MyQueryBuilderProps) {
+export default function ActionBuilder(props: MyQueryBuilderProps) {
   const { config, onTreeChange, initialTree } = props;
   const [tree, setTree] = useState<ImmutableTree | null>(initialTree ?? null);
   const [isClient, setIsClient] = useState(false);

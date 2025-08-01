@@ -1,15 +1,15 @@
 // app/src/app/teste/page.tsx
 "use client";
 import React from "react";
-import MyQueryBuilder from "@/components/query-builder/MyQueryBuilder";
+import ActionBuilder from "@/components/query-builder/action/ActionBuilder";
 import { inicialTree } from "./inicialTree";
 import type { Config, ImmutableTree } from '@react-awesome-query-builder/antd';
 import { BasicConfig } from '@react-awesome-query-builder/antd';
 import { Utils as QbUtils } from '@react-awesome-query-builder/antd';
 import { AntdConfig, AntdWidgets } from '@react-awesome-query-builder/antd';
-import '@react-awesome-query-builder/antd/css/styles.css';
+//import '@react-awesome-query-builder/antd/css/styles.css';
 //import "@/components/query-builder/MyQueryBuilder.css";
-import "./query-builder-actions.css";
+//import "./query-builder-actions.css";
 
 // ============================================================================
 // ⚙️ Configuração do Query Builder
@@ -96,7 +96,7 @@ export default function TestePage() {
       </h2>
 
       {/* 🧩 Renderiza o componente QueryBuilder, passando a configuração e o callback */}
-      <MyQueryBuilder config={config} onTreeChange={handleTreeChange} initialTree={tree} />
+      <ActionBuilder config={config} onTreeChange={handleTreeChange} initialTree={tree} />
 
       {/* Painéis lado a lado responsivos */}
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: 24, marginTop: 16 }}>
