@@ -22,6 +22,7 @@ export default function ActionBuilder(props: MyQueryBuilderProps) {
   const { config, onTreeChange, initialTree } = props;
   const [tree, setTree] = useState<ImmutableTree | null>(initialTree ?? null);
   const [isClient, setIsClient] = useState(false);
+  
   // 🔄 Efeito para inicializar a árvore de consulta quando o componente é montado no cliente
   // ou quando a configuração (config) ou initialTree é alterada.
   useEffect(() => {
