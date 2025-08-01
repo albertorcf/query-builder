@@ -2,6 +2,7 @@
 .query-builder {
   margin: 0;
   padding: 0;
+  color: #000;
 }
 
 .query-builder .group-or-rule-container {
