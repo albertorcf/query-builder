@@ -1,7 +1,7 @@
-// app/src/app/teste/page.tsx
+// app/src/app/condition/page.tsx
 "use client";
 import React from "react";
-import MyQueryBuilder from "@/components/query-builder/MyQueryBuilder";
+import ConditionBuilder from "@/components/query-builder/condition/ConditionBuilder";
 import { inicialTree } from "./inicialTree";
 import type { Config, ImmutableTree } from '@react-awesome-query-builder/antd';
 import { BasicConfig } from '@react-awesome-query-builder/antd';
@@ -154,7 +154,7 @@ export default function TestePage() {
       </h2>
       
       {/* 🧩 Renderiza o componente QueryBuilder, passando a configuração e o callback */}
-      <MyQueryBuilder config={config} onTreeChange={handleTreeChange} initialTree={tree} />
+      <ConditionBuilder config={config} onTreeChange={handleTreeChange} initialTree={tree} />
 
       {/* Painéis lado a lado responsivos */}
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: 24, marginTop: 32 }}>
