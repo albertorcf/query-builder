@@ -1,4 +1,4 @@
-// app/src/app/teste/page.tsx
+// app/src/app/action/page.tsx
 "use client";
 import React from "react";
 import ActionBuilder from "@/components/query-builder/action/ActionBuilder";
