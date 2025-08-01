@@ -27,6 +27,7 @@ const config: Config = {
       preferWidgets: ['number'],
     },
   },
+  
   settings: {
     ...AntdConfig.settings,
     showNot: false, // Esconde botão Not
@@ -68,11 +69,6 @@ export default function TestePage() {
   const [tree, setTree] = React.useState<ImmutableTree | null>(
     QbUtils.loadTree(inicialTree as any)
   );
-  // 🧠 (Comentado) Lógica para carregar a árvore inicial a partir do JsonLogic
-  // React.useEffect(() => {
-  //   const initialTree = QbUtils.loadFromJsonLogic(jsonLogicObject, config);
-  //   setTree(initialTree ?? null);
-  // }, []);
 
   // 🔄 Callback para atualizar o estado da árvore quando ela muda no componente filho
   const handleTreeChange = (newTree: ImmutableTree) => {

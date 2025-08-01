@@ -8,8 +8,6 @@ import '@react-awesome-query-builder/antd/css/styles.css';
 import '../MyQueryBuilder.css';
 import './ActionBuilder.css';
 
-//const InitialConfig = AntdConfig;
-
 // ⚛️ Tipagem das propriedades do componente
 type MyQueryBuilderProps = {
   config: Config;
@@ -18,7 +16,7 @@ type MyQueryBuilderProps = {
 };
 
 // ============================================================================
-// ✨ Componente MyQueryBuilder
+// ✨ Componente ActionBuilder
 // ============================================================================
 export default function ActionBuilder(props: MyQueryBuilderProps) {
   const { config, onTreeChange, initialTree } = props;
